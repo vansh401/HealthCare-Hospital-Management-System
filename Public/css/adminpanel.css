@@ -1,0 +1,232 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    /* Very light background color */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    /* White navbar background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    /* Dark gray logo text color */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo img {
+    width: 40px;
+    /* Set the desired width for your logo */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-right: 10px;
+}
+
+.search-area {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-area input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    /* Light gray border color */
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    margin-left: 200px;
+}
+
+.icons {
+    margin-right: 70px;
+    /* border: 2px solid black; */
+    color: #333;
+    /* Dark gray icon color */
+    font-size: 24px;
+    display: flex;
+    gap: 25px;
+    width: 80px;
+    z-index: 1;
+}
+
+.icons i:hover {
+    cursor: pointer;
+    color: #555;
+    /* Hover color */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    color: #333;
+    /* Dark gray text color for profile name */
+}
+
+.profile-img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-name {
+    font-weight: bold;
+}
+
+/* Side Menu Styles */
+.side-menu {
+    width: 240px;
+    height: 100%;
+    background-color: #068484;
+    /* Side menu background color */
+    position: fixed;
+    top: 68px;
+    /* Adjust based on the height of your navbar */
+    left: 0;
+    overflow-y: auto;
+    padding-top: 20px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+    /* Side menu box shadow */
+}
+
+.menu-item {
+    height: 30px;
+    padding: 15px;
+    color: #fff;
+    /* Text color for menu items */
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.menu-item:hover {
+    background-color: #72b5b5;
+    /* Hover color for menu items */
+}
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+    /* Add smooth transition effect */
+}
+
+.hidden {
+    display: none;
+}
+
+.inner-doctor-content {
+    /* border: 2px solid slateblue; */
+    border-radius: 5px;
+    height: 620px;
+    background-color: #ffffff;
+
+}
+
+.doctor-btn-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.add-btn {
+    color: blanchedalmond;
+    background: #20002c;
+    background: -webkit-linear-gradient(to left, #cbb4d4, #20002c);
+    background: linear-gradient(to left, #cbb4d4, #20002c);
+
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 100px;
+    width: 150px;
+}
+
+.view-btn {
+    color: blanchedalmond;
+    background: #20002c;
+    background: -webkit-linear-gradient(to left, #cbb4d4, #20002c);
+    background: linear-gradient(to left, #cbb4d4, #20002c);
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 100px;
+    width: 150px;
+}
+
+.doctor-btn-container a {
+    text-decoration: none;
+}
+
+/* -----------------------view-table------------------------ */
+
+.view-table {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+h1 {
+    color: #333333;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #e5e5e5;
+}
+
+table a {
+    color: #db3434;
+    text-decoration: none;
+}
+
+ table a:hover {
+    text-decoration: underline;
+}
+
+.msg-count{
+    height: 8px;
+    width: 8px;
+    background-color: #db3434;
+    border-radius: 50%;
+    transform: translate(79px,-5px);
+    z-index: 0;
+}
+.notification-count{
+    height: 8px;
+    width: 8px;
+    background-color: #db3434;
+    border-radius: 50%;
+    transform: translate(26px,-5px);
+    z-index: 0;
+}

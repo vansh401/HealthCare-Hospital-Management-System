@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="/css/patientpanel.css">
+    <link rel="icon" href="/images/logo.png" type="image/icon type">
+    <title>Patient Panel</title>
+</head>
+
+<body>
+    <nav>
+
+        <div class="search-area">
+
+            <input type="search" placeholder="Search">
+        </div>
+        <span class="msg-count"></span>
+        <span class="notification-count"></span>
+        <div class="icons">
+            <i class="uil uil-envelope"></i>
+            <i class="uil uil-bell"></i>
+            <!-- Add more icons as needed -->
+        </div>
+        <div class="profile">
+            <div class="profile-img">
+                <% var a=data.ph %>
+                    <% var b=a.substring(7); var c="/" +b; %>
+                        <img src=<%=c%> alt="">
+            </div>
+            <div class="profile-name">
+                <%= data.pn %>
+                    <img id="dropdown-icon" onclick="toggleDropdown()" src="/images/down-arrow.png" alt="">
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="">Edit Profile</a>
+                        <a href="/login.html" class="logout-btn">Logout</a>
+                    </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Side Menu -->
+    <div class="side-menu">
+        <div class="logo">
+            <a href=""><img src="/images/logo.png" alt="">Horizon</a>
+        </div>
+
+        <a href="/patientpanel" class="menu-item" onclick="clickEffect(this)"><i id="dashboard-icon" class="uil uil-create-dashboard "></i> Dashboard</a>
+        <a href="/patient_reports" class="menu-item" onclick="clickEffect(this)"><i class="uil uil-file-medical-alt"></i> Reports</a>
+        <a href="/patient_prescription" class="menu-item" onclick="clickEffect(this)"><i class="uil uil-file-medical"></i> My Prescription</a>
+        <a href="/patient_appointments" class="menu-item" onclick="clickEffect(this)"><i class="uil uil-bookmark"></i> Appointments</a>
+        <a href="/patient_finddoctor" class="menu-item" onclick="clickEffect(this)"><i class="uil uil-user-md"></i> Find A Doctor</a>
+        <a href="/patient_feedback" class="menu-item" onclick="clickEffect(this)"><i class="uil uil-comment-dots"></i> Feedback</a>
+        <hr color="gray" id="logout-hr">
+        <a href="#" class="menu-item"><i class="uil uil-setting"></i> Settings</a>
+        <a href="#" class="menu-item" id="logout-link"><i class="uil uil-signout"></i> Log Out</a>
+    </div>
+
+
+    <!-- Content Area -->
+
+    <div class="content" id="feedbackContent">
+        <h1>Feedback Section</h1>
+        <!-- Add mailbox content here -->
+    </div>
+
+    <script>
+        function clickEffect(menuItem) {
+            var menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(function (item) {
+                item.classList.remove('active');
+            });
+            menuItem.classList.add('active');
+        }
+
+        // ---------dropdown --------
+        function toggleDropdown() {
+            var dropdown = document.getElementById('myDropdown')
+            dropdown.classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="/css/adminpanel.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><a href=""><img src="/images/logo.png" alt="">Horizon</a></div>
+        <div class="search-area">
+
+            <input type="search" placeholder="Search">
+        </div>
+        <div class="icons">
+            <i class="uil uil-envelope"></i>
+            <i class="uil uil-bell"></i>
+            <!-- Add more icons as needed -->
+        </div>
+        <div class="profile">
+            <div class="profile-img">
+                <img src="/images/appoint.svg" alt="Profile Image">
+            </div>
+            <div class="profile-name">vansh</div>
+        </div>
+    </nav>
+
+    <!-- Side Menu -->
+    <div class="side-menu">
+        <a href="#" class="menu-item" onclick="showContent('dashboardContent')">Dashboard</a>
+        <a href="#" class="menu-item" onclick="showContent('doctorsContent')">Doctors</a>
+        <a href="#" class="menu-item" onclick="showContent('patientsContent')">Patients</a>
+        <a href="#" class="menu-item" onclick="showContent('appointmentContent')">Appointment</a>
+        <a href="#" class="menu-item" onclick="showContent('reportsContent')">Reports</a>
+        <a href="#" class="menu-item" onclick="showContent('billingContent')">Billing</a>
+        <a href="#" class="menu-item" onclick="showContent('mailboxContent')">Mailbox</a>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content" id="dashboardContent">
+        <!--only content class is there ,(not hidden class) because it is visible by default -->
+        <h1>Welcome to the Dashboard</h1>
+        <!-- Add dashboard content here -->
+    </div>
+    <div class="content hidden" id="doctorsContent">
+
+        <div class="inner-doctor-content">
+            <h1>Doctors Section</h1>
+            <div class="doctor-btn-container">
+                <a href="doctor_reg.html">
+                    <div class="add-btn">
+                        add doctor
+                        <i class="uil uil-user-plus"></i>
+                    </div>
+                </a>
+                <a href="viewDoctors">
+                    <div class="view-btn">
+                        view doctors
+                        <i class="uil uil-eye"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    
+
+
+    </div>
+    <div class="content hidden" id="patientsContent">
+        <h1>Patients Information</h1>
+        <!-- Add patients content here -->
+    </div>
+    <div class="content hidden" id="appointmentContent">
+        <h1>Appointment Details</h1>
+        <!-- Add appointment content here -->
+    </div>
+    <div class="content hidden" id="reportsContent">
+        <h1>Reports Section</h1>
+        <!-- Add reports content here -->
+    </div>
+    <div class="content hidden" id="billingContent">
+        <h1>Billing Information</h1>
+        <!-- Add billing content here -->
+    </div>
+    <div class="content hidden" id="mailboxContent">
+        <h1>Mailbox Section</h1>
+        <!-- Add mailbox content here -->
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            // Hide all content elements
+            var contentElements = document.querySelectorAll('.content');
+            contentElements.forEach(function (element) {
+                element.classList.add('hidden');
+            });
+
+            // Show the selected content
+            var selectedContent = document.getElementById(contentId);
+            selectedContent.classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>

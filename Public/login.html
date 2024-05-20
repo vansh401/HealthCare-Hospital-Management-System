@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" href="/images/logo.png" type="image/icon type">
+</head>
+<body>
+    <div class="login-form">
+        <h2>Horizon Healthcare</h2>
+        <form action="/loginProcess" method="post">
+            <select id="role" name="role">
+                <option value="Admin">Admin</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Patient">Patient</option>
+            </select>
+
+            <!-- <label for="email">Id</label> -->
+            <input type="email" placeholder="Id" name="Id" required>
+
+            <!-- <label for="password">Password</label> -->
+            <input type="password" placeholder="Password" name="pass" required>
+            
+            <button type="submit">Login</button>
+            <p>New User?<a href="patient_reg.html">Register</a></p>
+        </form>
+    </div>
+</body>
+</html> 
+

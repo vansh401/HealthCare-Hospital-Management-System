@@ -1,0 +1,543 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    /* Very light background color */
+}
+
+nav {
+    margin-left: 240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    /* White navbar background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    /* Dark gray logo text color */
+    font-size: 24px;
+    font-weight: bold;
+    /* padding-top: 0px; */
+    padding-bottom: 40px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #fff;
+    align-items: center;
+    display: flex;
+}
+
+.logo img {
+    width: 40px;
+    /* Set the desired width for your logo */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-right: 10px;
+}
+
+.search-area {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-area input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    /* Light gray border color */
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    margin-left: 100px;
+}
+
+.icons {
+    margin-right: 70px;
+    /* border: 2px solid black; */
+    color: #333;
+    /* Dark gray icon color */
+    font-size: 24px;
+    display: flex;
+    gap: 25px;
+    width: 80px;
+    z-index: 1;
+}
+
+.icons i:hover {
+    cursor: pointer;
+    color: #555;
+    /* Hover color */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    color: #333;
+    /* Dark gray text color for profile name */
+}
+
+.profile-img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-name {
+    font-weight: bold;
+}
+
+/* Side Menu Styles */
+.side-menu {
+    width: 240px;
+    height: 100%;
+    background-color: rgb(1, 1, 32);
+    /* Side menu background color */
+    position: fixed;
+    top: 0px;
+    left: 0;
+    overflow-y: auto;
+    padding-top: 20px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+    /* Side menu box shadow */
+}
+
+.menu-item {
+    margin-left: 13px;
+    width: 180px;
+    border-radius: 15px;
+    height: 30px;
+    padding: 12px;
+    color: #fff;
+    /* Text color for menu items */
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+/* .menu-item:hover {
+    background-color: rgb(51, 51, 105);
+     Hover color for menu items 
+} */
+
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+    /* Add smooth transition effect */
+}
+
+/* -----------------------view-table------------------------ */
+
+
+h1 {
+    color: #333333;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #e5e5e5;
+}
+
+table a {
+    color: #db3434;
+    text-decoration: none;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+.msg-count {
+    height: 8px;
+    width: 8px;
+    background-color: #db3434;
+    border-radius: 50%;
+    transform: translate(79px, -5px);
+    z-index: 0;
+}
+
+.notification-count {
+    height: 8px;
+    width: 8px;
+    background-color: #db3434;
+    border-radius: 50%;
+    transform: translate(26px, -5px);
+    z-index: 0;
+}
+
+.side-menu-icons {
+    height: 20px;
+    width: 20px;
+
+}
+
+#logout-hr {
+    margin-top: 60px;
+    width: 180px;
+    margin-right: 33px;
+}
+
+.msg-count {
+    height: 8px;
+    width: 8px;
+    background-color: #db3434;
+    border-radius: 50%;
+    transform: translate(79px, -5px);
+    z-index: 0;
+}
+
+.notification-count {
+    height: 8px;
+    width: 8px;
+    background-color: #db3434;
+    border-radius: 50%;
+    transform: translate(26px, -5px);
+    z-index: 0;
+}
+
+
+#dropdown-icon {
+    height: 12px;
+    width: 12px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    margin-top: 25px;
+    display: none;
+    position: fixed;
+    background-color: #f9f9f9;
+    min-width: 140px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 20px;
+    right: 4px;
+    font-size:smaller;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+
+
+.dropdown-content a:hover {
+    background-color: rgb(1, 1, 32);
+    color: #fff;
+    border-radius: 20px;
+}
+
+.dropdown-content a i{
+    margin-right: 5px;
+}
+
+.show {
+    display: block;
+}
+
+
+/* ----------dashboard content */
+.dashboard-welcome-div {
+    background-color: #6F00FF;
+    height: 250px;
+    width: 580px;
+    display: flex;
+    border-radius: 20px;
+
+}
+
+.dashboard-welcome-leftdiv {
+    height: 200px;
+    flex: 2;
+    padding: 10px;
+    box-sizing: border-box;
+    /* border: 1px solid #000000; */
+    margin: 20px;
+
+}
+
+.dashboard-welcome-rightdiv {
+    height: 200px;
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    /* border: 1px solid #000000; */
+    margin: 20px;
+}
+
+
+.dashboard-welcome-rightdiv img {
+    max-width: 170%;
+    height: auto;
+    max-height: 300px;
+    transform: translate(-30%, 5%);
+}
+
+.dashboard-welcome-leftdiv h1 {
+    color: white;
+}
+
+.dashboard-welcome-leftdiv h6 {
+    color: white;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 1.7cqb;
+
+}
+
+#book-appoint-icon {
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+}
+
+.dashboard-welcome-div a {
+    text-decoration: none;
+    color: black;
+    border-radius: 20px;
+    background-color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 185px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: small;
+}
+
+.doctor-search-area {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.doctor-search-area input {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    /* Light gray border color */
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    /* margin-left: 0px; */
+}
+.menu-item i{
+    padding-right: 10px;
+}
+
+
+
+/* to remove cross icon in search box */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+/* --------------doctors card --------*/
+/* .doctors-card {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.profilephoto {
+    margin-top: 10px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid black;
+    height: 100px;
+    margin-left: 7px;
+    background-image: url(/images/demoprofile.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.doctors-card h5{
+    color: #555;
+    margin-top:-16px ;
+}
+.doctors-card h3{
+    color: #6F00FF;
+    margin-top:7px ;
+}
+.doctor-info{
+    margin-top: 10px;
+    margin-left: 110px;
+}
+
+.doctor-info li{
+    padding-right: 55px;
+} */
+
+
+.doctors-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 20px; /* Adjust the gap between cards as needed */
+}
+
+.doctors-card {
+    margin-top: 20px;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* display: flex; */
+    align-items: center;
+    /* flex: 1 0 calc(33.333% - 16px); */
+    /* Align items vertically */
+}
+.doctor-top{
+    margin-top: 10px;
+    display: flex;
+}
+
+.profilephoto {
+    margin-left: 10px;
+    width: 120px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profilephoto img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.doctor-info {
+    margin-left: 10px;
+}
+
+.doctors-card h3 {
+    color: #6F00FF;
+    margin-top: 2px;
+    margin-left: 20px;
+}
+
+.doctors-card h5 {
+    color:#686767;
+    margin: 0;
+}
+
+.doctor-info li {
+    margin-top: -10px;
+    margin-left: -10px;
+}
+.doctorinfo2{
+    margin-top: 10px;
+    margin-left: 10px;
+    line-height: 1.6;
+}
+
+.apn-btn{
+    margin-top: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: #6F00FF;
+    color: #fff;
+    text-align: center;
+    height: 28px;
+    cursor: pointer;
+}
+
+.apn-btn:hover{
+    background-color: #5600c6;   
+}
+
+/* popup form for appointment */
+
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 13px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  .form-image {
+    /* max-width: 100%;
+    height: auto; */
+    /* margin-bottom: 20px; */
+    height: 160px;
+    width: 180px;
+    margin-left: 150px;
+    margin-top: -20px;
+  }
+
+
+  /* time slots grid */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+    gap: 10px; /* Adjust the gap between cells as needed */
+  }
+
+  .grid-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  .grid-item:hover{
+    background-color: #dbd5d5;
+    cursor: pointer;
+  }
+.close-button{
+    background-color: white;
+    color: #d2cece;
+    font-size: large;
+    font-weight: bold;
+    transform: translate(117px,-123px);
+    border: none;
+}
+.close-button:hover{
+    color: #7d7b7b;
+    cursor: pointer;
+}
+
+.book-apn-button{
+    text-decoration: none;
+    color: white;
+    background-color: #226666;
+    width: 120px;
+    height: 50px;
+}

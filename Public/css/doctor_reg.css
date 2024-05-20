@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    /* overflow: hidden; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150vh;
+    background: url('/images/hosp-bed.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Montserrat",sans-serif;
+}
+
+.login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic{
+    border-radius: 50%;
+}
+
+select, input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.user-img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    justify-content: center;
+    align-self: center;
+    margin-left: 110px;
+}
+#photo{
+    width: 100px;
+    height: 100px;
+    border-radius:50% ;
+}
+#file{
+    display: none;  
+}
+#uploadbtn{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    padding: 6px 6px;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgba(138, 137, 137, 0.895);
+    box-shadow: 2px 4px 4px rgb(0, 0, 0,0.644);
+    transform: translateX(-80%);
+    margin-top: 70px;
+}
+

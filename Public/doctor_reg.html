@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/doctor_reg.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="icon" href="/images/logo.png" type="image/icon type">
+</head>
+
+<body>
+    <div class="login-form">
+        <h2>Doctor Registraion</h2>
+        <form action="/doctorRegProcess" method="post" enctype="multipart/form-data">
+
+            <!-- ---------------------profile pic div -->
+            <div class="user-img">
+                <img src="/images/profile-user.png" alt="" id="photo">
+                <input type="file" id="file" accept="image/png,image/jpg, image/jpeg" name="profileImage" required> 
+                <label for="file" id="uploadbtn"><i id="camera-icon" class="uil uil-camera"></i></label>
+            </div>
+
+
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="email" placeholder="EmailId" name="email" required>
+            <input type="password" placeholder="Password" name="pass" required>
+            <input type="number" placeholder="Mobile No." name="mobno" required>
+            <input type="text" placeholder="Gender" name="gender" required>
+            <input type="date" placeholder="DOB" name="dob" required>
+            <input type="text" placeholder="Nationality" name="nationality" required>
+            <input type="text" placeholder="Qualification" name="qualification" required>
+            <input type="number" placeholder="License No." name="licenseno" required>
+            <input type="number" placeholder="Years of Experience" name="experienceYr" required>
+            <input type="text" placeholder="Department/Unit in Hospital" name="department" required>
+            <input type="date" placeholder="Registration Date" name="regDate" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script>
+       const imgDiv=document.querySelector('user-img'); 
+       const img= document.querySelector('#photo');
+       const file=document.querySelector('#file');
+        const uploadebtn= document.querySelector('#uploadbtn');
+        file.addEventListener('change', function(){
+            const choosedfile=this.files[0];
+            if(choosedfile){
+                const reader=new FileReader();
+                reader.addEventListener('load',function(){
+                    img.setAttribute('src',reader.result);   
+                })
+                reader.readAsDataURL(choosedfile);
+            }
+        })
+
+    </script>
+</body>
+
+</html>

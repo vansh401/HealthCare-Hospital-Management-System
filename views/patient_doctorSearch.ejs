@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="/css/patientpanel.css">
+    <link rel="icon" href="/images/logo.png" type="image/icon type">
+    <title>Patient Panel</title>
+</head>
+
+<body>
+    <nav>
+
+        <div class="search-area">
+
+            <input type="search" placeholder="Search">
+        </div>
+        <span class="msg-count"></span>
+        <span class="notification-count"></span>
+        <div class="icons">
+            <i class="uil uil-envelope"></i>
+            <i class="uil uil-bell"></i>
+            <!-- Add more icons as needed -->
+        </div>
+        <div class="profile">
+            <div class="profile-img">
+                <% var a=data.ph %>
+                    <% var b=a.substring(7); var c="/" +b; %>
+                        <img src=<%=c%> alt="">
+            </div>
+            <div class="profile-name">
+                <%= data.pn %>
+                    <img id="dropdown-icon" onclick="toggleDropdown()" src="/images/down-arrow.png" alt="">
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="">Edit Profile</a>
+                        <a href="/login.html" class="logout-btn">Logout</a>
+                    </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Side Menu -->
+    <div class="side-menu">
+        <div class="logo">
+            <a href=""><img src="/images/logo.png" alt="">Horizon</a>
+        </div>
+
+        <a href="/patientpanel" class="menu-item" onclick="clickEffect(this)"><i id="dashboard-icon"
+                class="uil uil-create-dashboard "></i> Dashboard</a>
+        <a href="/patient_reports" class="menu-item" onclick="clickEffect(this)"><i
+                class="uil uil-file-medical-alt"></i> Reports</a>
+        <a href="/patient_prescription" class="menu-item" onclick="clickEffect(this)"><i
+                class="uil uil-file-medical"></i> My Prescription</a>
+        <a href="/patient_appointments" class="menu-item" onclick="clickEffect(this)"><i class="uil uil-bookmark"></i>
+            Appointments</a>
+        <a href="/patient_finddoctor" class="menu-item" onclick="clickEffect(this)"><i class="uil uil-user-md"></i> Find
+            A Doctor</a>
+        <a href="/patient_feedback" class="menu-item" onclick="clickEffect(this)"><i class="uil uil-comment-dots"></i>
+            Feedback</a>
+        <hr color="gray" id="logout-hr">
+        <a href="#" class="menu-item"><i class="uil uil-setting"></i> Settings</a>
+        <a href="#" class="menu-item" id="logout-link"><i class="uil uil-signout"></i> Log Out</a>
+    </div>
+
+
+    <!-- Content Area -->
+
+    <div class="content" id="doctorContent">
+        <h1>Doctor Content</h1>
+        <form action="/doctorSearch" method="post">
+            <div class="doctor-search-area">
+                <input type="search" placeholder="Search for Doctors, Department" name="dsearch">
+            </div>
+
+
+        </form>
+
+        <!-- doctor card -->
+        <div class="doctors-container">
+            <% if (data.result && data.result.length> 0) { %>
+                <% data.result.forEach(function(doctor) { %>
+                    <div class="doctors-card">
+                        <div class="doctor-top">
+                            <div class="profilephoto">
+                                <% var a=doctor.profilephotoPath %>
+                                    <% var b=a.substring(7); var c="/" +b; %>
+                                        <img src=<%=c%> alt="">
+                            </div>
+                            <div class="doctor-info">
+                                <h3>
+                                    <%= doctor.Name %>
+                                </h3>
+                                <h5>
+                                    <ul>
+                                        <li>
+                                            <%= doctor.Department %>
+                                        </li>
+                                    </ul>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="doctorinfo2">
+                            <h5>Experience: <%= doctor.YearsOfExperience %> years</h5>
+                            <h5>Fees: 500</h5>
+                            <h5><i class="uil uil-phone"></i>: +91 <%= doctor.MobileNo %>
+                            </h5>
+                        </div>
+                        <div class="apn-btn" onclick="openForm()">Book an Appointment</div>
+                    </div>
+                    <% }); %>
+                        <% } %>
+        </div>
+
+        <!-- Add billing content here -->
+    </div>
+
+    <!-- appointment popup-form -->
+    <div class="popup-form" id="appointmentForm">
+        <img src="/images/apn-form-pic.jpg" class="form-image">
+        <button class="close-button" onclick="closeForm()"><i class="uil uil-multiply"></i></button>
+        
+        <br>
+        <!-- select time slots -->
+        <h4>Select Time</h4>
+        <div class="grid-container">
+            <div class="grid-item">8AM-9AM</div>
+            <div class="grid-item">9AM-10AM</div>
+            <div class="grid-item">10AM-11AM</div>
+            <div class="grid-item">11AM-12PM</div>
+            <div class="grid-item">12PM-1PM</div>
+            <div class="grid-item">1PM-2PM</div>
+            <div class="grid-item">2PM-3PM</div>
+            <div class="grid-item">3PM-4PM</div>
+            <div class="grid-item">4PM-5PM</div>
+            <div class="grid-item">5PM-6PM</div>
+            <div class="grid-item">6PM-7PM</div>
+            <div class="grid-item">7PM-8PM</div>
+          </div>
+
+        <!-- Add other form fields as needed -->
+        <a href="" class="book-apn-button">BOOK APPOINTMENT</a>
+        
+      </div>
+
+
+    <script>
+
+
+        function clickEffect(menuItem) {
+            var menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(function (item) {
+                item.classList.remove('active');
+            });
+            menuItem.classList.add('active');
+        }
+        // ---------dropdown --------
+        function toggleDropdown() {
+            var dropdown = document.getElementById('myDropdown')
+            dropdown.classList.toggle("show");
+        }
+
+
+        function openForm() {
+            document.getElementById("appointmentForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("appointmentForm").style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>
